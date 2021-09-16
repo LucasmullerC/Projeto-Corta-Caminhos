@@ -18,7 +18,7 @@ public class Grafo<TIPO> {
     public void adicionarAresta(TIPO ID, Double peso, TIPO dadoInicio, TIPO dadoFim) {
         Vertice<TIPO> inicio = this.getVertice(dadoInicio);
         Vertice<TIPO> fim = this.getVertice(dadoFim);
-        Arestas<TIPO> aresta = new Arestas<TIPO>(ID, peso, inicio, fim);
+        Arestas<TIPO> aresta = new Arestas<TIPO>(ID, peso, dadoInicio, dadoFim);
         inicio.adicionarArestaSaida(aresta);
         fim.adicionarArestaEntrada(aresta);
         this.arestas.add(aresta);
@@ -37,10 +37,27 @@ public class Grafo<TIPO> {
 
     public void imprimir() {
         Vertice<TIPO> vertice = null;
-        for (int i = 0; i < this.vertices.size(); i++) {
-            vertice = this.vertices.get(i);
-            System.out.print(vertice.getIdentificador() + ",");
-            System.out.println(vertice.getNome());
+        Arestas<TIPO> aresta = null;
+        String inicio, fim;
+        boolean in = false;
+        for (int i = 0; i < this.arestas.size(); i++) {
+            aresta = this.arestas.get(i);
+            for (int b = 0; b < this.vertices.size(); b++) {
+                vertice = this.vertices.get(b);
+                if (aresta.getInicio().toString().charAt(0) == vertice.getIdentificador().toString().charAt(0)) {
+                    System.out.print(vertice.getIdentificador() + ",");
+                    System.out.print(vertice.getNome() + " ---> ");
+                    in = true;
+                }
+                if (in == true
+                        & aresta.getFim().toString().charAt(0) == vertice.getIdentificador().toString().charAt(0)) {
+                    System.out.print(vertice.getIdentificador() + "," + vertice.getNome());
+                    if (this.arestas.size() != i + 1) {
+                        System.out.print(" ---> ");
+                    }
+
+                }
+            }
         }
     }
 }
