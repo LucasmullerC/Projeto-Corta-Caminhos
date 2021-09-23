@@ -21,11 +21,12 @@ public class Aplicacao {
         scanner2.useDelimiter(",");
         while (scanner2.hasNext()) {
             arest = scanner2.next().split(";");
+
             grafo.adicionarAresta(arest[0], Double.parseDouble(arest[1]), arest[2], arest[3]);
         }
         scanner2.close();
-
-        grafo.imprimir();
+        grafo.buscaEmLargura();
+        // grafo.imprimir();
     }
 
 }

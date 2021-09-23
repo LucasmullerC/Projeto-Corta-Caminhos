@@ -1,10 +1,10 @@
 public class Arestas<TIPO> {
     private Double peso;
     private TIPO identificador;
-    private TIPO inicio;
-    private TIPO fim;
+    private Vertice<TIPO> inicio;
+    private Vertice<TIPO> fim;
 
-    public Arestas(TIPO id, Double peso, TIPO inicio, TIPO fim) {
+    public Arestas(TIPO id, Double peso, Vertice<TIPO> inicio, Vertice<TIPO> fim) {
         this.identificador = id;
         this.peso = peso;
         this.inicio = inicio;
@@ -27,19 +27,19 @@ public class Arestas<TIPO> {
         this.peso = peso;
     }
 
-    public TIPO getInicio() {
+    public Vertice<TIPO> getInicio() {
         return inicio;
     }
 
-    public void setInicio(TIPO inicio) {
+    public void setInicio(Vertice<TIPO> inicio) {
         this.inicio = inicio;
     }
 
-    public TIPO getFim() {
+    public Vertice<TIPO> getFim() {
         return fim;
     }
 
-    public void setFim(TIPO fim) {
+    public void setFim(Vertice<TIPO> fim) {
         this.fim = fim;
     }
 
