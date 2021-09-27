@@ -25,7 +25,8 @@ public class Aplicacao {
             grafo.adicionarAresta(arest[0], Double.parseDouble(arest[1]), arest[2], arest[3]);
         }
         scanner2.close();
-        grafo.buscaEmLargura();
+
+        grafo.busca2("Rua A", "Rua F");
         // grafo.imprimir();
     }
 
