@@ -1,3 +1,5 @@
+package src;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -89,7 +91,7 @@ public class LerDoArquivo {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//Retornando os vertices
+		// Retornando os vertices
 		return g.getVertices();
 	}
 
@@ -107,8 +109,7 @@ public class LerDoArquivo {
 		Dijkstra algoritmo = new Dijkstra();
 		resultado = algoritmo.encontrarMenorCaminhoDijkstra(teste, i1, i2);
 
-		System.out.println("Esse é o menor caminho feito pelo algoritmo:"
-				+ resultado);
+		System.out.println("Esse é o menor caminho feito pelo algoritmo:" + resultado);
 	}
 
 }

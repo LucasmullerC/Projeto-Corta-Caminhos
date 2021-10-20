@@ -1,3 +1,5 @@
+package src;
+
 public class Aresta {
 
 	private int peso;
