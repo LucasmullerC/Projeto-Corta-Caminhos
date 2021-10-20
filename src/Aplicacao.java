@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Aplicacao {
+    
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         String v1, v2;
@@ -13,7 +14,7 @@ public class Aplicacao {
         System.out.println("Digite o ponto que deseja chegar:");
         v2 = input.nextLine();
         Grafo grafo = new Grafo();
-        grafo.setVertices(LerDoArquivo.lerGrafo("teste.txt"));
+        grafo.setVertices(LerDoArquivo.lerGrafo("Projeto-Grafos/teste.txt"));
         Vertice i1 = new Vertice();
         Vertice i2 = new Vertice();
         i1 = grafo.encontrarVertice(v1);
