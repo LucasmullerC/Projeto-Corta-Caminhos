@@ -1,11 +1,11 @@
-package src;
 
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
+import src.*;
 
 public class Aplicacao {
-    
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         String v1, v2;
